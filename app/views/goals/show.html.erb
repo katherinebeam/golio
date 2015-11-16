@@ -1,24 +1,26 @@
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag @goal.picture.url %>
-</p>
-<br>
-<p>
-  <strong>Title:</strong>
-  <%= @goal.title %>
-</p>
-<br>
-<p>
-  <strong>Description:</strong>
-  <%= @goal.description %>
-</p>
-<br>
-<p>
-  <strong>Location:</strong>
-  <%= @goal.location %>
-</p>
-<br>
-<% if @goal.user == current_user %>
-  <%= link_to 'Edit', edit_goal_path(@goal) %>
-<% end %>
-<%= link_to 'Back', goals_path %>
+<%= link_to 'Back', goals_path %><br>
+
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+    <div class="panel-heading center">
+      <%= image_tag @goal.picture.url(:medium) %>
+    </div>
+
+    <div class="panel-body center">
+      <h3><%= @goal.title %></h3>
+      <p><strong>Description: </strong><%= @goal.description %></p>
+      <p><strong>Location: </strong><%= @goal.location %></p>
+
+      <% if @goal.user == current_user %>
+        <div class="actions">
+          <%= link_to 'Edit ', edit_goal_path(@goal) %>|
+          <%= link_to 'Destroy', @goal, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<!-- include map of the location here!! -->
