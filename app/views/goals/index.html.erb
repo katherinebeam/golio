@@ -17,10 +17,10 @@
     <% @goals.each do |goal| %>
       <tr>
         <td><%= goal.title %></td>
-        <td><%= goal.description %></td>
+        <td><%= goal.user.email %></td>
         <td><%= goal.picture %></td>
         <td><%= goal.location %></td>
-        <td><%= link_to 'Show', goal %></td>
+        <td><%= link_to 'Show', goal_path(goal) %></td>
         <td><%= link_to 'Edit', edit_goal_path(goal) %></td>
         <td><%= link_to 'Destroy', goal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -29,5 +29,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Goal', new_goal_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Goal', new_goal_path %>
+<% end %>

@@ -1,5 +1,7 @@
 class GoalsController < ApplicationController
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
     @goals = Goal.all
@@ -9,19 +11,19 @@ class GoalsController < ApplicationController
   end
 
   def new
-    @goal = Goal.new
+    @goal = current_user.goals.build
   end
 
   def edit
   end
 
   def create
-    @goal = Goal.new(goal_params)
+    @goal = current_user.goals.build(goal_params)
 
     if @goal.save
       redirect_to @goal, notice: 'Goal was successfully created.'
     else
-      render action: 'new'
+      render :new
     end
   end
 
@@ -29,19 +31,26 @@ class GoalsController < ApplicationController
     if @goal.update(goal_params)
       redirect_to @goal, notice: 'Goal was successfully updated.'
     else
-      render action: 'edit'
+      render :edit
     end
   end
 
   def destroy
     @goal.destroy
-    redirect_to goals_url, notice: 'Goal was successfully destroyed.' 
+    redirect_to goals_url
   end
 
-  private
+    private
     def set_goal
-      @goal = Goal.find(params[:id])
+      @goal = Goal.find_by(params[:id])
     end
+
+    def correct_user
+      @goal = current_user.goals.find_by(id: params[:id])
+       if @goal.nil?
+         redirect_to goals_path, notice: "Not authorized to view that page."
+       end
+     end
 
     def goal_params
       params.require(:goal).permit(:title, :description, :picture, :location)
