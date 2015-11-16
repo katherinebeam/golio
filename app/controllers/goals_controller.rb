@@ -41,18 +41,16 @@ class GoalsController < ApplicationController
   end
 
     private
-    def set_goal
-      @goal = Goal.find_by(params[:id])
-    end
+      def set_goal
+        @goal = Goal.find_by(id: params[:id])
+      end
 
-    def correct_user
-      @goal = current_user.goals.find_by(id: params[:id])
-       if @goal.nil?
-         redirect_to goals_path, notice: "Not authorized to view that page."
+      def correct_user
+        @goal = current_user.goals.find_by(id: params[:id])
+        redirect_to goals_path, notice: "Not authorized to view that page." if @goal.nil?
        end
-     end
 
-    def goal_params
-      params.require(:goal).permit(:title, :description, :picture, :location)
-    end
+      def goal_params
+        params.require(:goal).permit(:title, :description, :picture, :location)
+      end
 end
