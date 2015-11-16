@@ -1,25 +1,23 @@
-<p id="notice"><%= notice %></p>
-
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag @goal.picture.url %>
+</p>
+<br>
 <p>
   <strong>Title:</strong>
   <%= @goal.title %>
 </p>
-
+<br>
 <p>
   <strong>Description:</strong>
   <%= @goal.description %>
 </p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= @goal.picture %>
-</p>
-
+<br>
 <p>
   <strong>Location:</strong>
   <%= @goal.location %>
 </p>
-
+<br>
 <% if @goal.user == current_user %>
   <%= link_to 'Edit', edit_goal_path(@goal) %>
 <% end %>

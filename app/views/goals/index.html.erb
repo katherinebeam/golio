@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Goals</h1>
+<h1>Dream Destinations</h1>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
+      <th>User</th>
       <th>Description</th>
       <th>Picture</th>
       <th>Location</th>
@@ -16,10 +17,10 @@
   <tbody>
     <% @goals.each do |goal| %>
       <tr>
-        <td><%= goal.title %></td>
+        <td><%= image_tag goal.picture.url(:medium) %></td>
         <td><%= goal.user.email if goal.user %></td>
-        <td><%= goal.picture %></td>
         <td><%= goal.location %></td>
+        <td><%= goal.description %></td>
         <td><%= link_to 'Show', goal_path(goal) %></td>
         <% if goal.user == current_user %>
           <td><%= link_to 'Edit', edit_goal_path(goal) %></td>
