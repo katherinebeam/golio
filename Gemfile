@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 3.4.0'
 gem 'mini_magick', '3.8.0'
 gem "paperclip", "~> 4.3"
+gem "aws-sdk", '< 2.0'
 
 group :development, :test do
   gem 'byebug'
