@@ -1,11 +1,17 @@
+<div class="profile" style="background: rgba(222,222,222,.5); padding: 20px 0 10px 0">
+  <%= image_tag current_user.picture.url(:medium), {:style=>'border-radius:100%; margin-left:43.7%;'}  %>
+  <h3 style="margin-left: 43%; color:white;"> <%= current_user.name %></h3>
+
+</div>
+
   <div id="goals" class="transitions-enabled">
     <% @goals.each do |goal| %>
       <div class="box panel panel-default">
         <%= link_to image_tag(goal.picture.url(:medium)), goal %>
-        <div class="panel-body">
-          <%= goal.description %><br>
-          <%= goal.location %>
-          <strong><%= goal.user.email if goal.user %></strong>
+        <div class="panel-body center">
+          <strong><%= goal.location %></strong><br>
+          <%= goal.description %>
+          <!-- <strong><%#= goal.user.email if goal.user %></strong> -->
           <% if goal.user == current_user %>
             <div class="actions">
               <%= link_to edit_goal_path(goal) do %>
@@ -20,3 +26,4 @@
       </div>
     <% end %>
   </div>
+<%= will_paginate @pins %>

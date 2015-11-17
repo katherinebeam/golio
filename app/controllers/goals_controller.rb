@@ -4,7 +4,7 @@ class GoalsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @goals = Goal.all.order("created_at DESC").paginate(:page => params[:page])
+    @goals = Goal.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 40)
   end
 
   def show
