@@ -1,0 +1,39 @@
+   <div class="jumbotron center" style="background-color:#0eb29a; width: 325px; height: 325px; border-radius:50%; margin-left:370px; margin-top:175px;">
+
+     <h1 style="color:#fff; padding-bottom: 30px;">Golio</h1>
+       <p>
+         <%= link_to "Log In", new_user_session_path, class: "btn btn-default btn-lg", style: "margin-right: 10px;" %>
+         <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg", style: "margin-left: 10px;" %>
+       </p>
+   </div>
+
+   <style type="text/css">
+       body{
+   background: url(http://fc07.deviantart.net/fs70/f/2013/174/3/e/recycled_texture_background_by_sandeep_m-d6aeau9.jpg);
+    background-color: #444;
+   background: url(http://mymaplist.com/img/parallax/pinlayer2.png),url(http://mymaplist.com/img/parallax/pinlayer1.png),url(http://mymaplist.com/img/parallax/back.png);
+}
+
+.vertical-offset-100{
+   padding-top:100px;
+}
+   </style>
+   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
+<!-- This is a very simple parallax effect achieved by simple CSS 3 multiple backgrounds, made by http://twitter.com/msurguy -->
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+ $(document).mousemove(function(e){
+    TweenLite.to($('body'),
+       .5,
+       { css:
+           {
+               backgroundPosition: ""+ parseInt(event.pageX/8) + "px "+parseInt(event.pageY/'12')+"px, "+parseInt(event.pageX/'15')+"px "+parseInt(event.pageY/'15')+"px, "+parseInt(event.pageX/'30')+"px "+parseInt(event.pageY/'30')+"px"
+           }
+       });
+ });
+});
+</script>
