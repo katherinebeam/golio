@@ -15,6 +15,7 @@ gem 'mini_magick', '3.8.0'
 gem "paperclip", "~> 4.3"
 gem "aws-sdk", '< 2.0'
 gem 'masonry-rails', '~> 0.2.0'
+gem 'will_paginate', '~> 3.0.5'
 
 group :development, :test do
   gem 'byebug'
