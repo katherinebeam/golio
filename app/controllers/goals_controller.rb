@@ -1,6 +1,6 @@
 class GoalsController < ApplicationController
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
@@ -38,6 +38,10 @@ class GoalsController < ApplicationController
   def destroy
     @goal.destroy
     redirect_to goals_url
+  end
+
+  def all_goals
+    index
   end
 
     private

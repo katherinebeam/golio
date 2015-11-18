@@ -1,13 +1,11 @@
-<% if current_user %>
+<% if user_signed_in? %>
   <div class="profile" style="background: rgba(222,222,222,.6); padding: 20px 0 10px 0">
-    <%= image_tag current_user.picture.url(:medium), {:style=>'border-radius:100%; margin-left:43.7%;'}  %>
-    <h3 style="margin-left: 43%; color:white;"> <%= current_user.name %></h3>
-<% end %>
-
-</div>
+      <%= image_tag current_user.picture.url(:medium), {:style=>'border-radius:100%; margin-left: 43.5%;'}  %>
+    <h3 style="color:white; text-align: center;"> <%= current_user.name + " " + current_user.last_name %></h3>
+  </div>
 
   <div id="goals" class="transitions-enabled">
-    <% @goals.each do |goal| %>
+    <% current_user.goals.each do |goal| %>
       <div class="box panel panel-default">
         <%= link_to image_tag(goal.picture.url(:medium)), goal %>
         <div class="panel-body center">
@@ -28,6 +26,9 @@
       </div>
     <% end %>
   </div>
-<div class="center">
-   <%= will_paginate @goals, renderer: BootstrapPagination::Rails %>
-</div>
+  <div class="center">
+     <%= will_paginate @goals, renderer: BootstrapPagination::Rails %>
+  </div>
+<% else %>
+  <%= render 'pages/home' %>
+<% end %>

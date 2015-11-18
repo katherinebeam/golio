@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
+  get 'home' => 'pages#home'
   resources :goals
   devise_for :users
-  get 'devise/registrations#new' => 'goals#index'
 
-  post 'devise/registrations#new' => 'goals#index'
 
-  get 'devise/sessions#new' => 'goals#index'
-
-  post 'devise/sessions#new' => 'goals#index'
-
-  root 'pages#home'
-  get 'about' => 'pages#about' # creates about_path
+  root 'goals#index'
+  get 'all_goals' => 'goals#all_goals'
+  get 'about' => 'pages#about'
 end

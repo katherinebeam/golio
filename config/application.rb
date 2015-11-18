@@ -25,5 +25,7 @@ module Golio
 
     # Required for Heroku
     config.assets.initialize_on_precompile = false
+    config.action_mailer.default_url_options = { :host => 'golio.herokuapp.com' }
+
   end
 end
