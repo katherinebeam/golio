@@ -17,3 +17,15 @@
 .about {
   padding: 25px;
 }
+#goals {
+  margin: 0 auto;
+}
+
+.box {
+  margin: 5px;
+  width: 214px;
+}
+
+.box img {
+  width: 100%;
+}
