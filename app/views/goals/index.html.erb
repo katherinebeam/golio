@@ -1,6 +1,8 @@
-<div class="profile" style="background: rgba(222,222,222,.5); padding: 20px 0 10px 0">
-  <%= image_tag current_user.picture.url(:medium), {:style=>'border-radius:100%; margin-left:43.7%;'}  %>
-  <h3 style="margin-left: 43%; color:white;"> <%= current_user.name %></h3>
+<% if current_user %>
+  <div class="profile" style="background: rgba(222,222,222,.6); padding: 20px 0 10px 0">
+    <%= image_tag current_user.picture.url(:medium), {:style=>'border-radius:100%; margin-left:43.7%;'}  %>
+    <h3 style="margin-left: 43%; color:white;"> <%= current_user.name %></h3>
+<% end %>
 
 </div>
 
@@ -9,9 +11,9 @@
       <div class="box panel panel-default">
         <%= link_to image_tag(goal.picture.url(:medium)), goal %>
         <div class="panel-body center">
-          <strong><%= goal.location %></strong><br>
-          <%= goal.description %>
-          <!-- <strong><%#= goal.user.email if goal.user %></strong> -->
+          <p style="font-size: 15px;"><strong><%= goal.location %></strong><p>
+          <p style="font-size: 13px;"><%= goal.description %><p>
+          <p style="font-size: 11px;"><strong>Destination added by: </strong><em><%= goal.user.email if goal.user %></em></p>
           <% if goal.user == current_user %>
             <div class="actions">
               <%= link_to edit_goal_path(goal) do %>
@@ -26,4 +28,6 @@
       </div>
     <% end %>
   </div>
-<%= will_paginate @pins %>
+<div class="center">
+   <%= will_paginate @goals, renderer: BootstrapPagination::Rails %>
+</div>
