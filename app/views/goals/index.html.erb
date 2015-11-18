@@ -5,7 +5,7 @@
   </div>
 
   <div id="goals" class="transitions-enabled">
-    <% current_user.goals.each do |goal| %>
+    <% current_user.goals.order("created_at DESC").each do |goal| %>
       <div class="box panel panel-default">
         <%= link_to image_tag(goal.picture.url(:medium)), goal %>
         <div class="panel-body center">
@@ -26,9 +26,7 @@
       </div>
     <% end %>
   </div>
-  <div class="center">
-     <%= will_paginate @goals, renderer: BootstrapPagination::Rails %>
-  </div>
+
 <% else %>
   <%= render 'pages/home' %>
 <% end %>
