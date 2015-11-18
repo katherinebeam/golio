@@ -10,22 +10,12 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require 'masonry/transitions'
  *= require_self
+ *= require 'masonry/transitions'
+ *= require_tree .
  */
+
+ 
 .about {
   padding: 25px;
-}
-#goals {
-  margin: 0 auto;
-}
-
-.box {
-  margin: 5px;
-  width: 214px;
-}
-
-.box img {
-  width: 100%;
 }

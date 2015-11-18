@@ -1,6 +1,7 @@
+
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 
-$font-family-sans-serif:           'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-sans-serif: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $jumbotron-bg: #1abc9c;
 $jumbotron-color: white;
 $body-bg: #0eb29a;
@@ -18,4 +19,16 @@ $navbar-default-link-color: #0eb29a;
 
 .navbar-brand {
      font-weight: bold;
+}
+#goals {
+  margin: 0 auto;
+}
+
+.box {
+  margin: 5px;
+  width: 214px;
+}
+
+.box img {
+  width: 100%;
 }

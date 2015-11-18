@@ -18,9 +18,10 @@
             <span class="glyphicon glyphicon-plus"></span> New Destination
             <% end %>
           </li>
+          <li><%= link_to "Inspire Me!", all_goals_path %></li>
           <li><%= link_to "Settings", edit_user_registration_path %></li>
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-          <li style="padding:.7em; color:#aaa;">Hello, <%= current_user.name %>!</span>
+          <li><%= link_to "Hello, " + current_user.name + "!", root_path, style: "color: #aaa;" %></li>
         <% else %>
           <li><%= link_to "Log In", new_user_session_path %></li>
         <% end %>
