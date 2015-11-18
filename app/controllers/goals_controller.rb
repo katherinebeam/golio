@@ -4,7 +4,7 @@ class GoalsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @goals = current_user.goals.all.order("created_at DESC")
+    @goals = Goal.all.order("created_at DESC")
   end
 
   def show
@@ -21,7 +21,7 @@ class GoalsController < ApplicationController
     @goal = current_user.goals.build(goal_params)
 
     if @goal.save
-      redirect_to @goal, notice: 'Goal was successfully created.'
+      redirect_to @goal, notice: 'Your golio was successfully created!'
     else
       render :new
     end
@@ -29,7 +29,7 @@ class GoalsController < ApplicationController
 
   def update
     if @goal.update(goal_params)
-      redirect_to @goal, notice: 'Goal was successfully updated.'
+      redirect_to @goal, notice: 'Your golio was successfully updated.'
     else
       render :edit
     end
@@ -41,7 +41,7 @@ class GoalsController < ApplicationController
   end
 
   def all_goals
-    @goals = Goal.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
+    @goals = Goal.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
   end
 
     private

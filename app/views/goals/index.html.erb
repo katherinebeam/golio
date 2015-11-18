@@ -12,7 +12,6 @@
         <div class="panel-body center">
           <p style="font-size: 15px;"><strong><%= goal.location %></strong><p>
           <p style="font-size: 13px;"><%= goal.description %><p>
-          <p style="font-size: 11px;"><strong>Destination added by: </strong><em><%= goal.user.email if goal.user %></em></p>
           <% if goal.user == current_user %>
             <div class="actions">
               <%= link_to edit_goal_path(goal) do %>

@@ -1,3 +1,5 @@
+<h1 style="color: white; text-align:center;">Get Inspired!</h1><br>
+
 <div id="goals" class="transitions-enabled">
   <% @goals.each do |goal| %>
     <div class="box panel panel-default">
@@ -5,7 +7,7 @@
       <div class="panel-body center">
         <p style="font-size: 15px;"><strong><%= goal.location %></strong><p>
         <p style="font-size: 13px;"><%= goal.description %><p>
-        <p style="font-size: 11px;"><strong>Destination added by: </strong><em><%= goal.user.email if goal.user %></em></p>
+        <p style="font-size: 11px;"><strong>Golio added by: </strong><em><%= goal.user.email if goal.user %></em></p>
 
         <% if current_user && goal.user == current_user %>
           <div class="actions">
