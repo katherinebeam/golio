@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
 
-  root 'goals#index'
+  root 'pages#home'
   get 'all_goals' => 'goals#all_goals'
   get 'about' => 'pages#about'
 end
