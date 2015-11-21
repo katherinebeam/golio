@@ -76,10 +76,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
   # Required for Heroku
   # Need to set this to actual host
-  config.action_mailer.default_url_options = { :host => 'http://golio.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: => 'http://golio.herokuapp.com/' }
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {

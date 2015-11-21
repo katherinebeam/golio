@@ -24,8 +24,8 @@ module Golio
     config.active_record.raise_in_transactional_callbacks = true
 
     # Required for Heroku
+    config.active_record.raise_in_transactional_callbacks = true
     config.assets.initialize_on_precompile = false
-    config.action_mailer.default_url_options = { :host => 'golio.herokuapp.com' }
 
   end
 end
