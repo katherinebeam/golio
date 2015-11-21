@@ -4,8 +4,7 @@
       <%= link_to image_tag('golio_360.png', style: "width: 50px; border-radius:50%; position:absolute; left:50px; top:10px;"), home_path %>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-      </ul>
+      <ul class="nav navbar-nav"></ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search golios">
@@ -14,8 +13,9 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li><%= link_to new_goal_path do %>
-            <span class="glyphicon glyphicon-plus"></span> New Golio
+          <li>
+            <%= link_to new_goal_path do %>
+              <span class="glyphicon glyphicon-plus"></span> New Golio
             <% end %>
           </li>
           <li><%= link_to "Inspire Me!", all_goals_path %></li>
@@ -25,8 +25,6 @@
         <% else %>
           <li><%= link_to "Log In", new_user_session_path %></li>
         <% end %>
-          </ul>
-        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->
