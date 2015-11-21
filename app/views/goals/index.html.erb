@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+
   <div class="profile" style="background: rgba(222,222,222,.6); padding: 20px 0 10px 0">
       <%= image_tag current_user.picture.url(:medium), {:style=>'border-radius:100%; margin-left: 43.5%;'}  %>
     <h3 style="color:white; text-align: center;"> <%= current_user.name + " " + current_user.last_name %></h3>
@@ -26,7 +26,3 @@
       </div>
     <% end %>
   </div>
-
-<% else %>
-  <%= render 'all_goals' %>
-<% end %>
