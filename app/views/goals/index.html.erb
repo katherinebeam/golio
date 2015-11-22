@@ -1,11 +1,11 @@
 
   <div class="profile" style="background: rgba(222,222,222,.6); padding: 20px 0 10px 0">
-      <%= image_tag current_user.picture.url(:medium), {:style=>'border-radius:100%; margin-left: 43.5%;'}  %>
+      <%= image_tag current_user.picture.url(:medium), {:style=>'border-radius:100%; margin-left: 43.5%;'}  if current_user.picture %>
     <h3 style="color:white; text-align: center;"> <%= current_user.name + " " + current_user.last_name %></h3>
     <h5 style="color:grey; text-align: center;"> <span class="glyphicon glyphicon-map-marker"> </span><%= current_user.location %></h3>
   </div>
 
-  <% if current_user.goals? %>
+  <% if current_user.goals != nil %>
     <div id="goals" class="transitions-enabled">
       <% current_user.goals.order("created_at DESC").each do |goal| %>
         <div class="box panel panel-default">
