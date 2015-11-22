@@ -5,7 +5,6 @@
     <h5 style="color:grey; text-align: center;"> <span class="glyphicon glyphicon-map-marker"> </span><%= current_user.location %></h3>
   </div>
 
-  <% if current_user.goals != nil %>
     <div id="goals" class="transitions-enabled">
       <% current_user.goals.order("created_at DESC").each do |goal| %>
         <div class="box panel panel-default">
@@ -13,7 +12,6 @@
           <div class="panel-body center">
             <p style="font-size: 15px;"><strong><%= goal.location %></strong><p>
             <p style="font-size: 13px;"><%= goal.description %><p>
-            <% if goal.user == current_user %>
               <div class="actions">
                 <%= link_to edit_goal_path(goal) do %>
                   <span class="glyphicon glyphicon-edit"></span> Edit
@@ -22,9 +20,8 @@
                   <span class="glyphicon glyphicon-trash"></span> Delete
                 <% end %>
               </div>
-            <% end %>
           </div>
         </div>
       <% end %>
     </div>
-  <% end %>
+  
