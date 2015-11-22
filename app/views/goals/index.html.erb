@@ -1,7 +1,7 @@
 <%= render 'pages/home' unless user_signed_in? %>
   <div class="profile" style="background: rgba(222,222,222,.6); padding: 20px 0 10px 0">
       <%= image_tag current_user.picture.url(:medium), {:style=>'border-radius:100%; margin-left: 43.5%;'}  if current_user.picture %>
-    <h3 style="color:white; text-align: center;"> <%= current_user.name + " " + current_user.last_name %></h3>
+    <h3 style="color:white; text-align: center;"> <%= current_user.name %> <%= current_user.last_name %></h3>
     <h5 style="color:grey; text-align: center;"> <span class="glyphicon glyphicon-map-marker"> </span><%= current_user.location %></h3>
   </div>
 
@@ -24,4 +24,3 @@
         </div>
       <% end %>
     </div>
-  
