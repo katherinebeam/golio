@@ -1,17 +1,5 @@
-<div class="jumbotron center" style="background-color:#0eb29a; width: 325px; height: 325px; border-radius:50%; margin-left:auto; margin-top:175px; margin-right: auto; display:block;">
-
-     <h1 style="color:#fff; padding-bottom: 15px; margin-top: 42%;font-size:48px;">Golio</h1>
-     <% if user_signed_in? %>
-     <% else %>
-       <p>
-         <%= link_to "Log In", new_user_session_path, class: "btn btn-default btn-lg", style: "margin-right: 3px;" %>
-         <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg", style: "margin-left: 4px;" %>
-       </p>
-      <% end %>
-   </div>
-
-   <style type="text/css">
-       body{
+<style type="text/css">
+    body {
    background: url(http://fc07.deviantart.net/fs70/f/2013/174/3/e/recycled_texture_background_by_sandeep_m-d6aeau9.jpg);
     background-color: #444;
    background: url(http://mymaplist.com/img/parallax/pinlayer2.png),url(http://mymaplist.com/img/parallax/pinlayer1.png),url(http://mymaplist.com/img/parallax/back.png);
@@ -37,3 +25,14 @@ $(document).ready(function(){
  });
 });
 </script>
+<div class="jumbotron center" style="background-color:#0eb29a; width: 325px; height: 325px; border-radius:50%; margin-left:auto; margin-top:175px; margin-right: auto; display:block;">
+
+     <h1 style="color:#fff; padding-bottom: 15px; margin-top: 42%;font-size:48px;">Golio</h1>
+     <% if user_signed_in? %>
+     <% else %>
+       <p>
+         <%= link_to "Log In", new_user_session_path, class: "btn btn-default btn-lg", style: "margin-right: 3px;" %>
+         <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg", style: "margin-left: 4px;" %>
+       </p>
+      <% end %>
+   </div>
