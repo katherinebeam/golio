@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   <div id="goals" class="transitions-enabled">
     <% @goals.each do |goal| %>
       <div class="box panel panel-default">
@@ -20,3 +21,31 @@
       </div>
     <% end %>
   </div>
+=======
+<%= render 'pages/home' unless user_signed_in? %>
+  <div class="profile" style="background: rgba(222,222,222,.6); padding: 20px 0 10px 0">
+      <%= image_tag current_user.picture.url(:medium), {:style=>'border-radius:100%; display:block;margin-left: auto;margin-right:auto; vertical-align:middle;'} %>
+    <h3 style="color:white; text-align: center;"> <%= current_user.name %> <%= current_user.last_name %></h3>
+    <h5 style="color:grey; text-align: center;"> <span class="glyphicon glyphicon-map-marker"> </span><%= current_user.location %></h3>
+  </div>
+
+    <div id="goals" class="transitions-enabled">
+      <% current_user.goals.order("created_at DESC").each do |goal| %>
+        <div class="box panel panel-default">
+          <%= link_to image_tag(goal.picture.url(:medium)), goal %>
+          <div class="panel-body center">
+            <p style="font-size: 15px;"><strong><%= goal.location %></strong><p>
+            <p style="font-size: 13px;"><%= goal.description %><p>
+              <div class="actions">
+                <%= link_to edit_goal_path(goal) do %>
+                  <span class="glyphicon glyphicon-edit"></span> Edit
+                <% end %>
+                <%= link_to goal, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <span class="glyphicon glyphicon-trash"></span> Delete
+                <% end %>
+              </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+>>>>>>> f473f23384e57d5168bc5222ed0e0cbdc0f77ba8

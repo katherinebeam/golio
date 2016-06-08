@@ -8,4 +8,8 @@
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+<<<<<<< HEAD
 Rails.application.config.assets.precompile += %w( search.js )
+=======
+Rails.application.config.assets.precompile += %w{ search.js }
+>>>>>>> f473f23384e57d5168bc5222ed0e0cbdc0f77ba8

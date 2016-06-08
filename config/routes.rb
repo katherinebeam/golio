@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   post 'devise/sessions#new' => 'goals#index'
 
   root 'pages#home'
-  get 'about' => 'pages#about' # creates about_path
+  get 'about' => 'pages#about'
+  get 'all_goals' => 'goals#all_goals'
+
 end

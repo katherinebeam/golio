@@ -1,11 +1,21 @@
+
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 
+<<<<<<< HEAD
 $font-family-sans-serif:           'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $jumbotron-bg: #1abc9c;
 $jumbotron-color: white;
 $body-bg: #ccc;
 $navbar-default-bg: #0eb29a;
 $navbar-default-link-color: white;
+=======
+$font-family-sans-serif: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$jumbotron-bg: #1abc9c;
+$jumbotron-color: white;
+$body-bg: #0eb29a;
+$navbar-default-bg: white;
+$navbar-default-link-color: #0eb29a;
+>>>>>>> f473f23384e57d5168bc5222ed0e0cbdc0f77ba8
 
 
 @import 'bootstrap-sprockets';
@@ -18,4 +28,16 @@ $navbar-default-link-color: white;
 
 .navbar-brand {
      font-weight: bold;
+}
+#goals {
+  margin: 0 auto;
+}
+
+.box {
+  margin: 5px;
+  width: 214px;
+}
+
+.box img {
+  width: 100%;
 }

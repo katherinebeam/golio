@@ -14,3 +14,8 @@
  *= require 'masonry/transitions'
  *= require_self
  */
+
+ 
+.about {
+  padding: 25px;
+}

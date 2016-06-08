@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151117154554) do
+=======
+ActiveRecord::Schema.define(version: 20151118201549) do
+>>>>>>> f473f23384e57d5168bc5222ed0e0cbdc0f77ba8
 
   create_table "goals", force: :cascade do |t|
     t.string   "title"
@@ -47,6 +51,12 @@ ActiveRecord::Schema.define(version: 20151117154554) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+<<<<<<< HEAD
+=======
+    t.string   "picture"
+    t.string   "last_name"
+    t.string   "location"
+>>>>>>> f473f23384e57d5168bc5222ed0e0cbdc0f77ba8
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

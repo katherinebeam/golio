@@ -1,36 +1,64 @@
+<<<<<<< HEAD
 <nav class="navbar navbar-static-top navbar-default" role="navigation" style="padding: 10px 0 10px 0; font-size: 18px;">
   <div class="container">
     <div class="navbar-header">
       <img src="/assets/golio_360.png" alt="" style="width: 50px; border-radius:50%; position:absolute; left:50px; top:10px;"/>
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+=======
+<nav class="navbar navbar-static-top navbar-default" role="navigation" style="padding: 10px 0 10px 0; font-size: 18px; color:#0eb29a">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+>>>>>>> f473f23384e57d5168bc5222ed0e0cbdc0f77ba8
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+<<<<<<< HEAD
       <%#= link_to root_path, class: "navbar-brand" %>
+=======
+      <%= link_to image_tag('golio_360.png', style: "width: 50px; border-radius:50%; position:absolute; left:50px; top:10px;"), root_path, class: "navbar-brand" %>
+>>>>>>> f473f23384e57d5168bc5222ed0e0cbdc0f77ba8
     </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav"></ul>
-      <form class="navbar-form navbar-left" role="search">
+
+      <!-- <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" class="form-control" placeholder="Search golios">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+      </form> -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li><%= link_to new_goal_path do %>
+<<<<<<< HEAD
             <span class="glyphicon glyphicon-plus"></span> New Destination
             <% end %>
            </li>
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
           <% else %>
+=======
+            <span class="glyphicon glyphicon-plus"></span> New Golio
+            <% end %>
+          </li>
+          <li><%= link_to "Inspire Me!", all_goals_path %></li>
+          <li><%= link_to "Settings", edit_user_registration_path %></li>
+          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+          <!-- <li><%#= link_to image_tag(current_user.picture, style: "width: 50px; border-radius:50%;position:absolute; top: 0px;margin-right:10px;"), goals_path %></li> -->
+          <li><%= link_to "Hello, " + current_user.name + "!", goals_path, style: "color: #aaa;" %></li>
+        <% else %>
+          <li><%= link_to "Inspire Me!", all_goals_path %></li>
+>>>>>>> f473f23384e57d5168bc5222ed0e0cbdc0f77ba8
           <li><%= link_to "Log In", new_user_session_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
         <% end %>
+<<<<<<< HEAD
           <li><%= link_to "Settings", edit_user_registration_path %></li>
           </ul>
         </li>
+=======
+>>>>>>> f473f23384e57d5168bc5222ed0e0cbdc0f77ba8
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->

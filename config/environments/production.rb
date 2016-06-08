@@ -22,6 +22,7 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
+  # config.serve_static_assets = false
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Compress JavaScripts and CSS.
@@ -46,7 +47,7 @@ Rails.application.configure do
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
-  config.log_level = :debug
+  config.log_level = :info
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -75,17 +76,16 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Do not dump schema after migrations.
-  config.active_record.dump_schema_after_migration = false
-
+  # config.active_record.dump_schema_after_migration = false
   # Required for Heroku
   # Need to set this to actual host
-  config.action_mailer.default_url_options = { :host => 'https://golio.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'http://golio.herokuapp.com/' }
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => ENV['S3_BUCKET_NAME']
+      :bucket => ENV['S3_BUCKET_NAME'],
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :sexret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
 end

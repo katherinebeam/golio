@@ -1,7 +1,7 @@
 <%= form_for @goal, html: { multipart: true } do |f| %>
   <% if @goal.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@goal.errors.count, "error") %> prohibited this pin from being saved:</h2>
+      <h2><%= pluralize(@goal.errors.count, "error") %> prohibited this golio from being saved:</h2>
 
       <ul>
       <% @goal.errors.full_messages.each do |msg| %>
@@ -18,7 +18,11 @@
 
   <div class="form-group">
     <%= f.label :description %>
+<<<<<<< HEAD
     <%= f.text_area :description, class: "form-control", placeholder: "Details..." %>
+=======
+    <%= f.text_area :description, class: "form-control", placeholder: "Details, please..." %>
+>>>>>>> f473f23384e57d5168bc5222ed0e0cbdc0f77ba8
   </div>
 
   <div class="form-group">
