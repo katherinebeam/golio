@@ -1,19 +1,22 @@
-<h1>My Dream Destinations</h1>
-<div id="goals" class="transitions-enabled">
-  <% @goals.each do |goal| %>
-    <div class="box panel panel-default">
-      <%= image_tag goal.picture.url(:medium) %>
-      <div class="panel-body">
-        <%= goal.user.email if goal.user %>
-        <%= goal.location %>
-        <%= goal.description %>
-        <%= link_to 'Show', goal_path(goal) %>
-        <% if goal.user == current_user %>
-          <%= link_to 'Edit', edit_goal_path(goal) %>
-          <%= link_to 'Destroy', goal, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
+  <div id="goals" class="transitions-enabled">
+    <% @goals.each do |goal| %>
+      <div class="box panel panel-default">
+        <%= link_to image_tag(goal.picture.url(:medium)), goal %>
+        <div class="panel-body">
+          <%= goal.description %><br>
+          <%= goal.location %>
+          <strong><%= goal.user.email if goal.user %></strong>
+          <% if goal.user == current_user %>
+            <div class="actions">
+              <%= link_to edit_goal_path(goal) do %>
+                <span class="glyphicon glyphicon-edit"></span> Edit
+              <% end %>
+              <%= link_to goal, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <span class="glyphicon glyphicon-trash"></span> Delete
+              <% end %>
+            </div>
+          <% end %>
+        </div>
       </div>
-    </div>
-  <% end %>
-</div>
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d114964.52300824488!2d-80.22945845000001!3d25.7824075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1447698251666" width="1000" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <% end %>
+  </div>
